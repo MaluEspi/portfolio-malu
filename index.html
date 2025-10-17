@@ -1,148 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maria Luiza Espigiorin de Oliveira</title>
-  <link rel="stylesheet" href="Css/Style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martial Spirit</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-
 <body>
-
-  <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-
-  <nav id="sideMenu">
-    <ul>
-      <li><a href="#dados">Dados Pessoais</a></li>
-      <li><a href="#apresentacao">Apresentação</a></li>
-      <li><a href="#formacao">Formação</a></li>
-      <li><a href="#experiencia">Experiência</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#habilidades">Habilidades</a></li>
-      <li><a href="#idiomas">Idiomas</a></li>
-      <li><a href="#portfolio-final">Portfólio</a></li>
-    </ul>
-
-    <button class="close-btn" onclick="toggleMenu()">&times;</button>
-  </nav>
-
-  <div class="container">
-
-    <header>
-      <img src="Imagens/Foto _Malu.jpeg" alt="Foto de Maria Luiza Espigiorin">
-      <h1>Maria Luiza Espigiorin de Oliveira</h1>
-    </header>
-
-
-    <section id="apresentacao">
-      <!-- <h2>Apresentação</h2> -->
-      <p>
-        Atuei na Seção de TI do IFPR – Campus Curitiba, prestando suporte técnico, manutenção de hardware e infraestrutura de redes. Tenho experiência em programação com C# para jogos na Unity, além de conhecimentos em modelagem 3D, áudio e design para games. Utilizo o Blender e o Inkscape para criação visual e modelagem, e para som, trabalho com o Nuendo e o FMOD. Meu principal objetivo é crescer na área de desenvolvimento de jogos, dominando as tecnologias mais utilizadas no mercado. Estou sempre disposta a aprender e explorar novas ferramentas para criar projetos inovadores e impactantes.
-      </p>
-      <h3>Desenvolvedora e estagiária em TI | Apaixonada por tecnologia e inovação</h3>
-    </section>
-
-    <section id="dados">
-      <h2>Dados Pessoais</h2>
-      <p>Telefone: (41)98780-3079</p>
-      <p>Email: maria.espigiorin@gmail.com</p>
-      <p>LinkedIn:
-        <a href="https://www.linkedin.com/in/maria-espigiorin-1ba23a246?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BcsZVSrDSRV%2BhDXH7MCk8Pw%3D%3D" target="_blank">
-          /in/maria-espigiorin
-        </a>
-      </p>
-    </section>
-
-    <section id="formacao">
-      <h2>Formação</h2>
-      <p>Técnico em Programação de Jogos Digitais - IFPR (2022 - atual)</p>
-      <p>Ensino Fundamental - Colégio Estadual Cívico-Militar Gottlieb Mueller (2018 - 2021)</p>
-    </section>
-
-
-    <section id="experiencia">
-      <h2>Experiência Profissional</h2>
-      <p>Estagiária na Seção de TI - IFPR Campus Curitiba (Jul/2024 - atual)</p>
-      <p>Suporte técnico, atendimento ao público, manutenção de equipamentos, redes e diagnóstico de problemas.</p>
-    </section>
-
-
-    <section id="projetos">
-      <h2>Projetos</h2>
+  <header>
+    <div class="logo">
+      <img src="img/logo2.png" alt="Logo Martial Spirit">
+    </div>
+    <nav>
       <ul>
-        <li>Laboratório Didático de Física Experimental (fev/2023 - dez/2023)</li>
-        <li>Aplicação de conceitos como MRU, MRUV e conservação de energia</li>
-        <li>Participação em eventos: SeCIF, IF TECH</li>
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="narrativa.html">Narrativa</a></li>
+        <li><a href="modelos.html">Modelos 3D</a></li>
+        <li><a href="codigo.html">Código</a></li>
+        <li><a href="contato.html">Equipe</a></li>
       </ul>
-    </section>
+    </nav>
+  </header>
 
-
-    <section id="habilidades">
-      <h2>Habilidades</h2>
-      <ul>
-        <li>Programação (C#, C++, C)</li>
-        <li>Desenvolvimento web com HTML, CSS e JavaScript</li>
-        <li>Design de interfaces e prototipação (Figma, UI/UX Design)</li>
-        <li>Desenvolvimento de jogos na Unity</li>
-        <li>Modelagem 3D (Blender, Inkscape)</li>
-        <li>Áudio para Jogos (Audacity, FMOD, Nuendo)</li>
-        <li>Infraestrutura, redes e hardware</li>
-      </ul>
-    </section>
-
-
-    <section id="idiomas">
-      <h2>Idiomas</h2>
-      <ul>
-        <li>Português — Nativo</li>
-        <li>Inglês — Intermediário</li>
-        <li>Italiano — Básico</li>
-      </ul>
-    </section>
-
-    <div class="separador"></div>
-
-    <section id="portfolio-final">
-      <h2>Portifólio</h2>
-      <div class="carrossel-container">
-        <div class="carrossel">
-          <button class="carrossel-btn" onclick="mudarImagens(-1)">&#10094;</button>
-          <div class="carrossel-imagens" id="carrossel-imagens">
-          </div>
-          <button class="carrossel-btn" onclick="mudarImagens(1)">&#10095;</button>
-        </div>
-      </div>
-  </div>
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Martial Spirit</h1>
+      <p>Um RPG educativo que une filosofia, autoconhecimento e a arte marcial do Karatê.</p>
+      <a href="sobre.html" class="btn">Explorar o Jogo</a>
+    </div>
   </section>
 
-
-  <footer>
-    &copy; 2025 Maria Luiza Espigiorin de Oliveira. Todos os direitos reservados.<br>
-    <button onclick="changeFont('Roboto')">Roboto</button>
-    <button onclick="changeFont('Lobster')">Lobster</button>
-    <button onclick="changeFont('Montserrat')">Montserrat</button>
+  <footer class="site-footer">
+    <p>© 2025 <strong>ByteCompilers</strong> — Projeto <em>Martial Spirit</em></p>
+    <p>Desenvolvido por Maria Espigiorin</p>
   </footer>
-
-  <script src="JavaScript/Script.js"></script>
-
 </body>
-
-<div id="zoom-overlay" class="zoom-overlay" onclick="fecharZoom()">
-  <div class="zoom-container" onclick="event.stopPropagation()">
-    <img id="zoom-imagem" src="" alt="Imagem Ampliada">
-    <div id="zoom-descricao" class="zoom-descricao"></div>
-    <span class="zoom-close" onclick="fecharZoom()">×</span>
-  </div>
-</div>
-
-<div id="viewer-overlay" class="zoom-overlay" onclick="fecharViewer()">
-  <div class="zoom-container" onclick="event.stopPropagation()">
-    <div class="viewer-container" id="viewer"></div>
-    <span class="zoom-close" onclick="fecharViewer()">×</span>
-  </div>
-</div>
-
 
 </html>

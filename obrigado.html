@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensagem Enviada | Martial Spirit</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .thank-container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      max-width: 500px;
+      width: 90%;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    .redirect {
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #ffc107;
+    }
+
+    .redirect span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="thank-container">
+    <h1>✅ Mensagem Enviada com Sucesso!</h1>
+    <p>Obrigado por entrar em contato com a equipe do <strong>Martial Spirit</strong>.<br>
+      Em breve responderemos sua mensagem.</p>
+    <p class="redirect">Você será redirecionado para a página inicial em <span id="contador">8</span> segundos...</p>
+  </div>
+
+  <script>
+    // Contador regressivo + redirecionamento
+    let tempo = 8;
+    const contador = document.getElementById('contador');
+
+    const interval = setInterval(() => {
+      tempo--;
+      contador.textContent = tempo;
+      if (tempo <= 0) {
+        clearInterval(interval);
+        window.location.href = "index.html";
+      }
+    }, 1000);
+  </script>
+  
+</body>
+
+</html>
