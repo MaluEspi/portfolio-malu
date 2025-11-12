@@ -73,6 +73,19 @@ function mudarImagens(direcao) {
   exibirImagens();
 }
 
+function fecharViewer() {
+  const viewerOverlay = document.getElementById("viewer-overlay");
+  const viewer = document.getElementById("viewer");
+  if (!viewerOverlay || !viewer) return;
+
+  viewerOverlay.style.display = "none";
+  viewer.innerHTML = ""; // limpa o modelo
+  const script = document.querySelector(
+    'script[src="JavaScript/HouseViewer.js"]'
+  );
+  if (script) script.remove(); // remove o script carregado
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   exibirImagens();
 
