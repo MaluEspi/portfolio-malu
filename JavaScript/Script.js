@@ -81,15 +81,113 @@ document.addEventListener("DOMContentLoaded", () => {
       const src = e.target.getAttribute("src");
       const descricao = e.target.getAttribute("data-descricao");
 
+      // 🔹 CASA JAPONESA (com viewer e botão de fechar)
       if (src.includes("img3.png")) {
-        document.getElementById("viewer-overlay").style.display = "flex";
+        const viewerOverlay = document.getElementById("viewer-overlay");
+        viewerOverlay.style.display = "flex";
 
+        // Se não houver viewer carregado ainda, carrega o script
         if (!document.getElementById("viewer").hasChildNodes()) {
           const script = document.createElement("script");
           script.type = "module";
           script.src = "JavaScript/HouseViewer.js";
           document.body.appendChild(script);
         }
+
+        // Permitir fechar o viewer ao clicar fora ou pressionar ESC
+        viewerOverlay.addEventListener("click", (ev) => {
+          if (ev.target === viewerOverlay) {
+            fecharViewer();
+          }
+        });
+
+        document.addEventListener("keydown", (ev) => {
+          if (ev.key === "Escape") {
+            fecharViewer();
+          }
+        });
+
+        // 🔹 JOGO DA ABELHA
+      } else if (src.includes("img5.png")) {
+        const popup = window.open(
+          "",
+          "popupAbelha",
+          `width=600,height=${screen.height},resizable=yes,scrollbars=yes`
+        );
+
+        if (popup) {
+          popup.document.write(`
+            <html>
+              <head>
+                <title>Jogo da Abelha</title>
+                <style>
+                  html, body {
+                    margin: 0;
+                    padding: 0;
+                    height: 100vh;
+                    font-family: 'Poppins', sans-serif;
+                    background-color: #0e0e0e;
+                    color: #f0f0f0;
+                    text-align: center;
+                    overflow-y: auto;
+                  }
+                  h1 {
+                    color: #fff;
+                    font-size: 1.8rem;
+                    margin: 15px 0;
+                    background: linear-gradient(
+                      to right,
+                      transparent,
+                      #a259ff,  
+                      #8e3ee6,
+                      #a259ff,
+                      transparent
+                    );
+                    opacity: 0.9;
+                  }
+                  img {
+                    max-width: 90%;
+                    border-radius: 10px;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                    margin-bottom: 20px;
+                  }
+                  p {
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    color: #ccc;
+                    white-space: pre-line;
+                    margin: 0 20px 20px;
+                  }
+                  a {
+                    display: inline-block;
+                    background: linear-gradient(to right, #a259ff, #8e3ee6);
+                    color: #fff;
+                    text-decoration: none;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    font-weight: bold;
+                    transition: transform 0.2s ease;
+                  }
+                  a:hover {
+                    transform: scale(1.05);
+                  }
+                </style>
+              </head>
+              <body>
+                <h1>Jogo da Abelha</h1>
+                <img src="${src}" alt="Imagem">
+                <p>${descricao}</p>
+                <a href="abelha.html" target="_blank">Acessar o jogo</a>
+              </body>
+            </html>
+          `);
+          popup.document.close();
+          popup.focus();
+        } else {
+          alert("Por favor, permita pop-ups para visualizar as informações.");
+        }
+
+        // 🔹 DEMAIS PROJETOS
       } else {
         const popup = window.open(
           "",
@@ -118,14 +216,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     font-size: 1.8rem;
                     margin: 15px 0;
                     background: linear-gradient(
-                    to right,
-                    transparent,
-#a259ff,  
-#8e3ee6,
-#a259ff,
-    transparent
-  );
-  opacity: 0.8;
+                      to right,
+                      transparent,
+                      #a259ff,  
+                      #8e3ee6,
+                      #a259ff,
+                      transparent
+                    );
+                    opacity: 0.8;
                   }
                   img {
                     max-width: 90%;
@@ -159,10 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function fecharZoom() {
-  document.getElementById("zoom-overlay").style.display = "none";
-}
-
 function fecharViewer() {
-  document.getElementById("viewer-overlay").style.display = "none";
+  const overlay = document.getElementById("viewer-overlay");
+  if (overlay) overlay.style.display = "none";
 }
