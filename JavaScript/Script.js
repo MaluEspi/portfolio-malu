@@ -79,11 +79,11 @@ function fecharViewer() {
   if (!viewerOverlay || !viewer) return;
 
   viewerOverlay.style.display = "none";
-  viewer.innerHTML = ""; // limpa o modelo
+  viewer.innerHTML = "";
   const script = document.querySelector(
     'script[src="JavaScript/HouseViewer.js"]'
   );
-  if (script) script.remove(); // remove o script carregado
+  if (script) script.remove();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -94,7 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const src = e.target.getAttribute("src");
       const descricao = e.target.getAttribute("data-descricao");
 
-      // 🔹 CASA JAPONESA (com viewer e botão de fechar)
       if (src.includes("img3.png")) {
         const viewerOverlay = document.getElementById("viewer-overlay");
         viewerOverlay.style.display = "flex";
@@ -117,8 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
             fecharViewer();
           }
         });
-
-        // 🔹 JOGO DA ABELHA
       } else if (src.includes("img5.png")) {
         const popup = window.open(
           "",
@@ -197,8 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           alert("Por favor, permita pop-ups para visualizar as informações.");
         }
-
-        // 🔹 MARTIAL SPIRIT (com link para o site online)
       } else if (src.includes("img1.png")) {
         const popup = window.open(
           "",
@@ -278,8 +273,6 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           alert("Por favor, permita pop-ups para visualizar as informações.");
         }
-
-        // 🔹 DEMAIS PROJETOS
       } else {
         const popup = window.open(
           "",

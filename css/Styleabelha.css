@@ -22,7 +22,6 @@ canvas {
   background: url("../img/bg.png") center/cover no-repeat;
 }
 
-/* Telas sobre o canvas */
 .tela {
   position: absolute;
   top: 0;
