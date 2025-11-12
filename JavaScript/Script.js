@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const viewerOverlay = document.getElementById("viewer-overlay");
         viewerOverlay.style.display = "flex";
 
-        // Se não houver viewer carregado ainda, carrega o script
         if (!document.getElementById("viewer").hasChildNodes()) {
           const script = document.createElement("script");
           script.type = "module";
@@ -94,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
           document.body.appendChild(script);
         }
 
-        // Permitir fechar o viewer ao clicar fora ou pressionar ESC
         viewerOverlay.addEventListener("click", (ev) => {
           if (ev.target === viewerOverlay) {
             fecharViewer();
@@ -187,6 +185,87 @@ document.addEventListener("DOMContentLoaded", () => {
           alert("Por favor, permita pop-ups para visualizar as informações.");
         }
 
+        // 🔹 MARTIAL SPIRIT (com link para o site online)
+      } else if (src.includes("img1.png")) {
+        const popup = window.open(
+          "",
+          "popupMartialSpirit",
+          `width=600,height=${screen.height},resizable=yes,scrollbars=yes`
+        );
+
+        if (popup) {
+          popup.document.write(`
+            <html>
+              <head>
+                <title>Martial Spirit – Jogo Educativo</title>
+                <style>
+                  html, body {
+                    margin: 0;
+                    padding: 0;
+                    height: 100vh;
+                    font-family: 'Poppins', sans-serif;
+                    background-color: #0e0e0e;
+                    color: #f0f0f0;
+                    text-align: center;
+                    overflow-y: auto;
+                  }
+                  h1 {
+                    color: #fff;
+                    font-size: 1.8rem;
+                    margin: 15px 0;
+                    background: linear-gradient(
+                      to right,
+                      transparent,
+                      #a259ff,  
+                      #8e3ee6,
+                      #a259ff,
+                      transparent
+                    );
+                    opacity: 0.9;
+                  }
+                  img {
+                    max-width: 90%;
+                    border-radius: 10px;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                    margin-bottom: 20px;
+                  }
+                  p {
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    color: #ccc;
+                    white-space: pre-line;
+                    margin: 0 20px 20px;
+                  }
+                  a {
+                    display: inline-block;
+                    background: linear-gradient(to right, #a259ff, #8e3ee6);
+                    color: #fff;
+                    text-decoration: none;
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    font-weight: bold;
+                    transition: transform 0.2s ease;
+                    margin-bottom: 30px;
+                  }
+                  a:hover {
+                    transform: scale(1.05);
+                  }
+                </style>
+              </head>
+              <body>
+                <h1>Martial Spirit – Jogo Educativo</h1>
+                <img src="${src}" alt="Imagem">
+                <p>${descricao}</p>
+                <a href="https://maluespi.github.io/MartialSpiritSite/" target="_blank">Acessar o site do jogo</a>
+              </body>
+            </html>
+          `);
+          popup.document.close();
+          popup.focus();
+        } else {
+          alert("Por favor, permita pop-ups para visualizar as informações.");
+        }
+
         // 🔹 DEMAIS PROJETOS
       } else {
         const popup = window.open(
@@ -256,8 +335,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-function fecharViewer() {
-  const overlay = document.getElementById("viewer-overlay");
-  if (overlay) overlay.style.display = "none";
-}
