@@ -1,0 +1,107 @@
+body {
+  background: linear-gradient(180deg, #fffbe6, #fff0b3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+#container {
+  position: relative;
+  border: 10px solid #ffe88a;
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(255, 245, 150, 0.9);
+  background-color: #fff8dc;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  background: url("../img/bg.png") center/cover no-repeat;
+}
+
+/* Telas sobre o canvas */
+.tela {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 900px;
+  height: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tela.hidden {
+  display: none;
+}
+
+.tela-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.btn-jogo {
+  z-index: 2;
+  background: url("../img/botao.png") center/cover no-repeat;
+  width: 260px;
+  height: 110px;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: absolute;
+  bottom: 50px;
+  letter-spacing: 1px;
+}
+
+.btn-jogo:hover {
+  transform: scale(1.07);
+  filter: brightness(1.1);
+}
+#bee-title {
+  position: absolute;
+  top: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  font-size: 56px;
+  font-weight: 900;
+  color: #ffb300;
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.9),
+    3px 3px 10px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  pointer-events: none;
+}
+#tituloJogo {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 56px;
+  font-weight: 900;
+  color: #ffb300;
+  text-shadow: 3px 3px 0 #fff, 5px 5px 10px rgba(0, 0, 0, 0.3);
+  font-family: "Fredoka One", "Comic Sans MS", sans-serif;
+  pointer-events: none;
+}
+
+#gameOver .btn-jogo,
+#vitoria .btn-jogo {
+  width: 420px;
+  height: 150px;
+  font-size: 34px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}

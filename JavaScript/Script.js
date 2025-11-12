@@ -38,6 +38,13 @@ const imagens = [
     descricao:
       "Martial Spirit – Jogo Educativo (TCC em equipe)\nAno de desenvolvimento: 2025\n\n*Martial Spirit* é um jogo RPG 3D educativo que está sendo desenvolvido como trabalho de conclusão de curso por nossa equipe no IFPR. O jogo propõe uma jornada imersiva que une a filosofia do Karate-Do a decisões éticas e conscientes feitas pelo jogador. O objetivo é provocar reflexão, aprendizado e empatia, usando o universo das artes marciais como pano de fundo.\n\nAtuo como gerente de projeto e designer geral, sendo responsável por todas as modelagens, texturizações, interfaces e elementos visuais — com exceção dos personagens. A experiência tem sido enriquecedora e desafiadora, exigindo visão de conjunto, coordenação de equipe, criatividade visual e domínio técnico em Blender e Unity. O desenvolvimento está em andamento, e estamos constantemente aperfeiçoando o projeto para entregar um jogo impactante, bonito e significativo.",
   },
+
+  {
+    src: "img5.png",
+    descricao:
+      "Jogo da Abelha — Um projeto desenvolvido com HTML, CSS e JavaScript, criado para a disciplina de Desenvolvimento Web. Neste jogo, o desafio é guiar uma abelha até as flores, desviando dos obstáculos pelo caminho. O projeto foi feito para praticar lógica de programação, manipulação de canvas e eventos de teclado, unindo criatividade e código em uma experiência leve e divertida!",
+    link: "abelha.html",
+  },
 ];
 
 let indiceAtual = 0;

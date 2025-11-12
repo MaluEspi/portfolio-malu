@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/Styleabelha.css" />
+  <title>Jogo da Abelha</title>
+</head>
+
+<body>
+  <div id="container">
+    <canvas id="canvas" width="900" height="720"></canvas>
+
+    <!-- TELAS -->
+    <div id="menu" class="tela">
+      <img src="img/menubee.jpg" class="tela-bg" alt="Menu" />
+      <button id="btnJogar" class="btn-jogo">Jogar</button>
+      <h1 id="tituloJogo">Jogo da Abelha</h1>
+    </div>
+
+    <div id="gameOver" class="tela hidden">
+      <img src="img/gameoverbee.png" class="tela-bg" alt="Game Over" />
+      <button id="btnRetry" class="btn-jogo">Novamente?</button>
+    </div>
+
+    <div id="vitoria" class="tela hidden">
+      <img src="img/vitoria.png" class="tela-bg" alt="Vitória" />
+      <button id="btnPlayAgain" class="btn-jogo">Novamente?</button>
+
+    </div>
+  </div>
+
+  <script src="JavaScript/avulso.js"></script>
+  <script src="JavaScript/jogo.js"></script>
+</body>
+
+</html>
